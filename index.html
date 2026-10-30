@@ -84,9 +84,10 @@
   @media (max-width:900px){.grid>.card{flex-basis:calc((100% - 24px) / 2)}}
   @media (max-width:600px){.grid>.card{flex-basis:100%}}
   .card{background:#fff;border-radius:var(--radius);padding:30px;border:1px solid #d9edf3;border-top:8px solid var(--cyan);box-shadow:0 3px 12px rgba(0,0,0,.07)}
-  .card .tag{display:inline-block;max-width:100%;background:var(--cyan);font-weight:700;border-radius:8px;padding:4px 12px;margin-bottom:14px;font-size:.95rem}
+  .card .tag{display:inline-block;max-width:100%;background:var(--cyan);font-weight:700;border-radius:8px;padding:5px 14px;margin-bottom:14px;font-size:1.15rem;line-height:1.5}
   .card p{margin:0;color:var(--muted)}
-  #palvelut .card h3{display:inline-block;max-width:100%;background:var(--cyan);padding:7px 16px;border-radius:8px;margin:0 0 14px}
+  #palvelut .card .area{margin:0 0 8px;font-size:.9rem;font-weight:700;color:#000}
+  #palvelut .card h3{display:inline-block;max-width:100%;background:var(--cyan);padding:5px 14px;border-radius:8px;margin:0 0 14px;font-size:1.15rem;line-height:1.5}
 
   /* Referenssit */
   #referenssit{background:#fff}
@@ -94,8 +95,8 @@
   .quals{max-width:760px;margin:0 auto 48px;padding:0;list-style:none}
   .quals li{position:relative;padding:4px 0 4px 38px;margin:10px 0;color:var(--muted)}
   .quals li::before{content:"";position:absolute;left:0;top:.2em;width:22px;height:22px;border-radius:50%;background:var(--cyan)}
-  .quals li::after{content:"";position:absolute;left:8px;top:.42em;width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
-  .ref .lead{color:#000;font-weight:700;margin:0 0 4px}
+  .quals li::after{content:"";position:absolute;left:11px;top:calc(.2em + 11px);width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;transform:translate(calc(-50% + var(--cx,0px)),calc(-50% + var(--cy,-1.8px))) rotate(45deg)}
+  .ref .lead{color:#000;font-weight:700;margin:0 0 4px;font-size:.9rem}
   .ref .reflist{margin:10px 0 0;padding:0;list-style:none}
   .ref .reflist li{position:relative;padding-left:24px;margin:10px 0;color:var(--muted)}
   .ref .reflist li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--cyan)}
@@ -132,9 +133,8 @@
     .hero .brand{margin-bottom:42px}
     .hero h1{margin-bottom:38px}
     .burger{display:block}
-    .menu{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--cyan);box-shadow:0 6px 10px rgba(0,0,0,.10);max-height:0;overflow:hidden;transition:max-height .3s}
-    .menu.open{max-height:340px}
-    .menu{margin:0;padding:6px 0 10px}
+    .menu{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--cyan);box-shadow:none;max-height:0;overflow:hidden;visibility:hidden;margin:0;padding:0;transition:max-height .3s,padding .3s,visibility 0s .3s}
+    .menu.open{max-height:340px;padding:6px 0 10px;box-shadow:0 6px 10px rgba(0,0,0,.10);visibility:visible;transition:max-height .3s,padding .3s,visibility 0s}
     .menu a{display:block;margin:4px 14px;padding:11px 18px}
     .btn.outline{margin:14px 0 0}
     form{padding:22px}
@@ -145,7 +145,7 @@
   }
   @media (max-width:600px){
     br.mbr{display:inline}
-    .hero::before,.hero::after{width:min(28vw,110px);height:min(30vw,118px)}
+    .hero::before,.hero::after{width:min(23vw,88px);height:min(20vw,78px)}
   }
   @media (max-width:350px){
     .ref .reflist li{font-size:.88rem}
@@ -185,9 +185,9 @@
       <p class="section-intro" style="margin-bottom:14px">Tarjoan LVIA-suunnittelua sekä KVV- ja IV-työnjohdon palveluita rakennushankkeisiin yli 7 vuoden kokemuksella. Suunnittelutehtävien toimeksiantoja otan vastaan koko Suomen laajuudella ja työnjohtajan tehtäviä Pirkanmaalla.</p>
       <p class="section-intro">Tarjoan palveluitani niin yksityisille pientalorakentajille kuin taloyhtiöille ja kaupallisille toimijoille, kustannustehokkaasti laadusta tinkimättä!</p>
       <div class="grid">
-        <article class="card"><h3>LVIA-suunnittelu</h3><p>Rakennuksen lämmitys-, vesijohto-, viemäri-, ilmanvaihto- ja automaatiojärjestelmien suunnittelu</p></article>
-        <article class="card"><h3>KVV-työnjohto</h3><p>Kiinteistön vesi- ja viemärilaitteiston rakentamisesta vastaava työnjohtaja (tavanomainen pätevyysluokka)</p></article>
-        <article class="card"><h3>IV-työnjohto</h3><p>Kiinteistön ilmanvaihtolaitteiston rakentamisesta vastaava työnjohtaja (tavanomainen pätevyysluokka)</p></article>
+        <article class="card"><h3>LVIA-suunnittelu</h3><div class="area">Koko Suomi</div><p>Rakennuksen lämmitys-, vesijohto-, viemäri-, ilmanvaihto- ja automaatiojärjestelmien suunnittelu</p></article>
+        <article class="card"><h3>KVV-työnjohto</h3><div class="area">Pirkanmaa</div><p>Kiinteistön vesi- ja viemärilaitteiston rakentamisesta vastaava työnjohtaja (tavanomainen pätevyysluokka)</p></article>
+        <article class="card"><h3>IV-työnjohto</h3><div class="area">Pirkanmaa</div><p>Kiinteistön ilmanvaihtolaitteiston rakentamisesta vastaava työnjohtaja (tavanomainen pätevyysluokka)</p></article>
       </div>
     </div>
   </section>
@@ -197,8 +197,8 @@
       <h2>Referenssit</h2>
       <p class="section-intro" style="margin-bottom:22px">Minulla on yli 7 vuoden työkokemus LVIA-suunnittelun sekä KVV- ja IV-työnjohdon tehtävien parissa toimimisesta. Koulutukseltani olen LVI-talotekniikan insinööri (AMK) ja lisäksi minulla on seuraavat Kiwa Sertifiointi Oy:n todentamat pätevyydet:</p>
       <ul class="quals">
-        <li>Vesi- ja viemärilaitteiston suunnittelu - Vaativa pätevyysluokka (uudisrakentaminen sekä korjaus- ja muutostyöt)</li>
-        <li>Ilmanvaihdon suunnittelu - Vaativa pätevyysluokka (uudisrakentaminen sekä korjaus- ja muutostyöt)</li>
+        <li>Vesi- ja viemärilaitteiston suunnittelu - Vaativa&nbsp;pätevyysluokka (uudisrakentaminen sekä korjaus- ja muutostyöt)</li>
+        <li>Ilmanvaihdon suunnittelu - Vaativa&nbsp;pätevyysluokka (uudisrakentaminen sekä korjaus- ja muutostyöt)</li>
       </ul>
       <p class="section-intro" style="margin-bottom:28px;color:#000;font-weight:700">Olen toiminut mm. seuraavissa tehtävissä:</p>
       <div class="grid">
@@ -240,6 +240,7 @@
           </div>
           <!-- Roskapostin ansa: oikeat käyttäjät eivät näe tätä -->
           <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="fineprint" style="margin:0 0 16px;font-size:.9rem;color:var(--muted)">Lähettämällä lomakkeen hyväksyt, että tietojasi käsitellään <a href="/tietosuoja.html" target="_blank" rel="noopener" style="color:inherit;font-weight:700">tietosuojaselosteen</a> mukaisesti.</p>
           <button class="btn outline" type="submit" id="submitBtn" style="margin:0">Lähetä viesti</button>
           <div class="status" id="status" role="status" aria-live="polite"></div>
         </form>
